@@ -3,30 +3,30 @@
 ## Table of Contents 
 
 1. [Introduction](#1-introduction)   
-  1.1 [Mammography and BI-RADS Scoring](#11-mammography-and-bi-rads-scoring)   
-  1.2 [Challenges in Mammography Screening](#12-challenges-in-mammography-screening)   
-  1.3 [Use of Machine Learning and Mammography Masses Dataset](#13-use-of-machine-learning-and-mammography-masses-dataset)   
-  1.4 [Feature Space](#14-feature-space)    
+    1.1 [Mammography and BI-RADS Scoring](#11-mammography-and-bi-rads-scoring)   
+    1.2 [Challenges in Mammography Screening](#12-challenges-in-mammography-screening)   
+    1.3 [Use of Machine Learning and Mammography Masses Dataset](#13-use-of-machine-learning-and-mammography-masses-dataset)   
+    1.4 [Feature Space](#14-feature-space)    
 
-2. Methodology  
-  2.1 Data Cleansing   
-  2.2 Feature Pre-processing  
-  2.3 Model Selection: K-nearest neighbour   
-  2.4 Hyper-parameter Optimisation: KNN  
-  2.5 Model Selection: Random Forest  
-  2.6 Hyper-parameter Optimisation: Random Forest  
-  2.7 Model Evaluation Metrics
+2. [Methodology](#2-methodology)  
+    2.1 [Data Cleansing](#21-data-cleansing)   
+    2.2 [Feature Pre-processing](#22-feature-pre-processing)  
+    2.3 [Model Selection: K-nearest neighbour](#23-model-selection-k-nearest-neighbour)   
+    2.4 [Hyper-parameter Optimisation: KNN](#24-hyper-parameter-optimisation-knn)  
+    2.5 [Model Selection: Random Forest](#25-model-selection-random-forest)  
+    2.6 [Hyper-parameter Optimisation: Random Forest](#26-hyper-parameter-optimisation-random-forest)  
+    2.7 [Model Evaluation Metrics](#27-model-evaluation-metrics)
    
-3. Results  
-  3.1 KNN  
-  3.2 Random Forest  
-  3.3 RF and KNN Sensitivity Analysis   
+3. [Results](#3-results)  
+    3.1 [KNN](#31-knn)  
+    3.2 [Random Forest](#33-rf-and-knn-sensitivity-analysis)  
+    3.3 [RF and KNN Sensitivity Analysis](#33-rf-and-knn-sensitivity-analysis)   
 
-4. Discussion and Conclusion
+4. [Discussion and Conclusion](#4-discussion-and-conclusion)
 
-5. References
+5. [References](#5-references)
 
-6. Appendices
+6. [Appendices](#6-appendices)
 
 
 
