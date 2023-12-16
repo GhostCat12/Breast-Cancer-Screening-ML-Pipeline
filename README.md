@@ -1,12 +1,13 @@
 # Computer-Aided Diagnosis of Breast Cancer Based on Age, BI-RADS Score and Mammographic Masses to Improve Healthcare Screening
 
-Table of Contents 
+## Table of Contents 
 
-1. [1. Introduction](#1-Introduction)
-  - [1.1 Mammography and BI-RADS Scoring]
-  - [1.2 Challenges in Mammography Screening]
-  - [1.3 Use of Machine Learning and Mammography Masses Dataset]
-  - [1.4 Feature Space]
+1. [Introduction](#1-introduction)   
+  1.1 [Mammography and BI-RADS Scoring](#11-mammography-and-bi-rads-scoring)   
+  1.2 [Challenges in Mammography Screening](#12-challenges-in-mammography-screening)   
+  1.3 [Use of Machine Learning and Mammography Masses Dataset](#13-use-of-machine-learning-and-mammography-masses-dataset)   
+  1.4 [Feature Space](#14-feature-space)    
+
 2. Methodology  
   2.1 Data Cleansing   
   2.2 Feature Pre-processing  
@@ -14,7 +15,18 @@ Table of Contents
   2.4 Hyper-parameter Optimisation: KNN  
   2.5 Model Selection: Random Forest  
   2.6 Hyper-parameter Optimisation: Random Forest  
-  2.7 Model Evaluation Metrics  
+  2.7 Model Evaluation Metrics
+   
+3. Results  
+  3.1 KNN  
+  3.2 Random Forest  
+  3.3 RF and KNN Sensitivity Analysis   
+
+4. Discussion and Conclusion
+
+5. References
+
+6. Appendices
 
 
 
