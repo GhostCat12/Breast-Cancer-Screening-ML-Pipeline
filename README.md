@@ -106,6 +106,16 @@ Orange shows BI-RADS against margin shape and density provided the most informat
 
 
 ## 5. References
+
+1. Global Cancer Observatory. Cancer Over Time [Internet]. International Agency for Research on Cancer. World Health Organisation; 2021 [cited 2021 Dec 3]. Available from: https://gco.iarc.fr/overtime/en/dataviz/trends?multiple_populations=1&sexes=2&cancers=14&types=1&populations=27600_75200_82600_84000_4000_3600_10000_12400_20800_24600_25000_34800_30000_38000_52800_55400_57800_62000_75600_85800&key=asr&age_end=16&group_populations=0&years=1960_2018&scale=linear&min_zero=1&num_path=2&smoothing=20   
+2. Global Cancer Observatory. Cancer today [Internet]. International Agency for Research on Cancer. World Health Organisation; 2020 [cited 2021 Dec 3]. Available from: https://gco.iarc.fr/today/online-analysis-pie   
+  3. SEER. Female Breast Cancer - Cancer Stat Facts [Internet]. National Cancer Institute. 2018. Available from: https://seer.cancer.gov/statfacts/html/breast.html 
+4. NHS. When you’ll Be Invited for Breast Screening and Who Should Go [Internet]. National Health Service. 2021 [cited 2021 Dec 3]. Available from: https://www.nhs.uk/conditions/breast-screening-mammogram/when-youll-be-invited-and-who-should-go/   
+5. CDC. What Is Breast Cancer screening? [Internet]. Centers for Disease Control and Prevention. 2019 [cited 2021 Dec 3]. Available from: https://www.cdc.gov/cancer/breast/basic_info/screening.htm   
+6. American College Of Radiology. ACR BI-RADS Atlas: Breast Imaging and Reporting Data System. 5th ed. Reston, Va: American College of Radiology; 2013.  
+7. Maxwell AJ, Ridley NT, Rubin G, Wallis MG, Gilbert FJ, Michell MJ. The Royal College of Radiologists Breast Group Breast Imaging Classification. Clinical Radiology [Internet]. 2009 Jun [cited 2021 Dec 4];64(6):624–7. Available from: https://doi.org/10.1016/j.crad.2009.01.010   
+8. Ong M-S, Mandl KD. National Expenditure for False-Positive Mammograms and Breast Cancer Overdiagnoses Estimated at $4 Billion a Year. Health Affairs [Internet]. 2015 Apr [cited 2021 Dec 4];34(4):576–83. Available from: https://doi.org/10.1377/hlthaff.2014.1087   
+
 https://archive.ics.uci.edu/dataset/161/mammographic+mass
 
 ## 6. Appendices
