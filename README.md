@@ -123,11 +123,34 @@ Orange toolbox contains a variety of evaluation metrics. For a classification ta
 ## 3. Results
 
 ### 3.1 KNN
+The K number and associated evaluation metrics were recorded in a table (Appendix 2a). The focus was on obtaining a minimal error rate (1 – precision); Figure 4a shows the k values plotted against precision; other evaluation metrics were used as support. K = 9 was chosen due to the least error and highest overall evaluation metrics. Similarly, evaluation metrics were tabulated after changing to distance weighting (Appendix 2b). Figure 4b presented precision against the various K values and showed an underperformance on all evaluation metrics compared to uniform weighting.
+The finalised hyperparameters are K = 9 using Euclidean distance of uniform weight. 
+
+
+<br><b>Figure 4a</b>. Hyperparameter tuning of K number and the associated model precision. Euclidean distance of uniform weight.    
+
+<br><b>Figure 4b.</b> Hyperparameter tuning of K number and the associated model precision. Euclidean distance of distance-based weight.
+
+The stratified 10-fold cross-validation on the optimised hyperparameters of KNN gave the following confusion matrix and evaluation metrics, shown in Figure 5. However, focussing on AUROC as the primary metric and other metrics as secondary, then K = 21 provides better results than k=9, 0.898 vs 0.891, respectively (Figure 5d). However, F1 and CA are the main focus due to their robustness in model evaluation.    
+
+<br><b>Figure 5.</b> K-nearest neighbour model evaluation. a) Confusion matrix when k=9. b) 5 evaluation metrics when k=9. C) AUROC curve when k=9 d) AUROC curve when k=21. Abbreviations: AUC, Area under the curve; AUROC, area under the receiver operating characteristic; CA, accuracy.
 
 ### 3.2 Random Forest
+The AUC and precision were plotted against the number of trees (Figure 6a), where the chosen optimal n was 60 and 90 trees. The attribute number at each split was tested for n = 60 and n = 90, where the number of attributes = 4 of n = 90 yielded favourable results (Figure 6b), although overall differences in model performance were minute. 
+
+<br><b>Figure 6a.</b> Changes in AUC and precision at various number of trees in random forest. Highest precision seen in k= 60 and k=90. Abbreviations: AUC, Area under the curve.
+
+<br><b>Figure 6b.</b> Changes in F1 score for attribute number at tree split set to 2, 3 and 4. Highest precision seen in k=90 using 4 attributes at tree split. 
+
+The stratified 10-fold cross-validation of n = 90 and attribute at each split = 4  of RF gave the following model performance (Figure 6). It is noted that RF performed worse than KNN with an F1 (and accuracy) of 0.805 vs 0.839, respectively. 
 
 ### 3.3 RF and KNN Sensitivity Analysis 
+A sensitivity analysis was carried out to reduce the uncertainty surrounding both models (Table 4). This was done by removing one of the features within the dataset whilst keeping the others, giving insight into the importance of certain features. Removing BI-RADS for both models drastically reduced the performance, demonstrating that this is an excellent indicator for predicting breast cancer and the model mainly relied on this. For both models, the individual exclusion of shape improved the score, this was by a significant margin for RF but only a small increase in KNN. This may indicate that Shape data is superfluous to the prediction or may be detrimental; further research would be required to confirm. When removing the Margin feature, both algorithms had a minimal decrease in score. Interestingly, the removal of Age in the RF model improved the F1 score, whereas the K-NN model worsened. Density was removed in the pre-processing stage as it was assumed as insignificant in cancer detection and may reduce model performance; this has been proved by this analysis.     
 
+|Table 4.  Feature sensitivity analysis of K nearest neighbour and Random Forest. Removal of individual features and recording F1 score. |
+| --- |
+
+Overall, BI-RADS and Margin are key factors in prediction, whereas Density and Shape are not. The case for Age cannot be ascertained as it improves one model whilst deteriorating the other. However, the insight given from this report can only be validated by cross-checking with other datasets, as the dataset used is relatively small and could contain biases. It should be noted that the RF method does create a new forest when altering the data (despite setting the forest as replicable), thus leading to minor deviations in prediction capabilities, nevertheless still included within this sensitivity analysis.
 
 ## 4. Discussion and Conclusion
 
