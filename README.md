@@ -174,8 +174,14 @@ The RF and KNN model performed at 0.839 and 0.805 F1 scores. This was not expect
 6. American College Of Radiology. ACR BI-RADS Atlas: Breast Imaging and Reporting Data System. 5th ed. Reston, Va: American College of Radiology; 2013.  
 7. Maxwell AJ, Ridley NT, Rubin G, Wallis MG, Gilbert FJ, Michell MJ. The Royal College of Radiologists Breast Group Breast Imaging Classification. Clinical Radiology [Internet]. 2009 Jun [cited 2021 Dec 4];64(6):624–7. Available from: https://doi.org/10.1016/j.crad.2009.01.010   
 8. Ong M-S, Mandl KD. National Expenditure for False-Positive Mammograms and Breast Cancer Overdiagnoses Estimated at $4 Billion a Year. Health Affairs [Internet]. 2015 Apr [cited 2021 Dec 4];34(4):576–83. Available from: https://doi.org/10.1377/hlthaff.2014.1087   
+9. Elter M. Mammographic Mass [Internet]. UCI Machine Learning Repository. 2007 [cited 2021 Dec 4]. Available from: https://archive.ics.uci.edu/dataset/161/mammographic+mass     
+10. Urso A, Fiannaca A, La Rosa M, Ravì V, Rizzo R. Data Mining: Prediction Methods. Encyclopedia of Bioinformatics and Computational Biology [Internet]. 2019 [cited 2021 Dec 3];1:413–30. Available from: https://doi.org/10.1016/b978-0-12-809633-8.20462-7 
+11. Zucco C. Multiple Learners Combination: Bagging. Encyclopedia of Bioinformatics and Computational Biology [Internet]. 2019 [cited 2021 Dec 7];1:525–30. Available from: https://doi.org/10.1016/B978-0-12-809633-8.20345-2 
+12. Benndorf M, Burnside ES, Herda C, Langer M, Kotter E. External validation of a publicly available computer assisted diagnostic tool for mammographic mass lesions with two high prevalence research datasets. Medical Physics [Internet]. 2015 Jul 31 [cited 2021 Dec 13];42(8):4987–96. Available from: https://doi.org/10.1118/1.4927260     
+13. Elter M, Schulz-Wendtland R, Wittenberg T. The prediction of breast cancer biopsy outcomes using two CAD approaches that both emphasize an intelligible decision process. Medical Physics [Internet]. 2007 Oct 15 [cited 2021 Dec 14];34(11):4164–72. Available from: https://doi.org/10.1118/1.2786864
 
-https://archive.ics.uci.edu/dataset/161/mammographic+mass
+
+
 
 ## 6. Appendices
 
