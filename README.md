@@ -65,16 +65,14 @@ The dataset originates from the Institute of Radiology of University Erlangen-Nu
 Orange shows BI-RADS against margin shape and density provided the most informative projections. An example of BI-RADS vs Margin is portrayed in *Figure 2a*, showing a positive correlation, and a boundary line can be defined between the features. Secondly, BI-RADS vs Age was important to look at (Figure 2b), as BI-RADS scoring includes margin, shape and density masses and summarises the overall relationship of age with the remaining features. Also to note, the outliers showing BI-RADS scores of 6 are biopsy-confirmed malignant cases; therefore, the two benign (blue circles) are incorrect; the remaining BI-RADS score = 6 may contribute to data leakage. Highlighting Density vs other features showed density did not provide much information (Figure 2c), as it mostly lay in a single plane; density may be removed during feature selection.
 
 <p align="center">
-<img src="images/figure_2a.png" width="700">     
-<p align="center"><b>Figure 2a.</b> BI-RADS vs Margin feature space created in Orange toolbox</p>   
+<img src="images/figure_2a.png" width="680"><br><b>Figure 2a.</b> BI-RADS vs Margin feature space created in Orange toolbox.</p>   
+
     
 <p align="center">
-<img src="images/figure_2b.png" width="700">  
-<p align="center"><b>Figure 2b.</b> Age vs BI-RADS feature space created in Orange toolbox.</p>
+<img src="images/figure_2b.png" width="680"><br><b>Figure 2b.</b> Age vs BI-RADS feature space created in Orange toolbox.</p>
 
 <p align="center">
-<img src="images/figure_2c.png" width="700">  
-<p align="center"><b>Figure 2c.</b> Age vs Density feature space created in Orange toolbox.</p>
+<img src="images/figure_2c.png" width="680"><br><b>Figure 2c.</b> Age vs Density feature space created in Orange toolbox.</p>
 
 
 ## 2. Methodology    
@@ -111,12 +109,15 @@ The second model that was used is Random forest (RF). RF is an ensemble method b
 
 | Box 2. Random Forest algorithm pseudocode. |
 | --- |
-|<b>Start</b><br>Load labelled dataset = D <br> All set of features = F <br><dd> Manually assign the number of trees, where trees = N <dd><br> For all trees 1 to N, using the bootstrap method:<br> &emsp;&emsp;take a small randomly selected sample from D, labelled d <br>&emsp;&emsp;and a random set number of features (f) that are less than F<br>Using f set of features, calculate the root node using one best-split approach<br>Create daughter nodes where best split approaches are:<br>&emsp;&emsp;Gini impurity (likely used in Orange toolkit)<br>&emsp;&emsp;Entropy <br>&emsp;&emsp;Classification error<br><dd>Once N trees are created with their daughter nodes, a random forest has been created<dd><br> Using each decision tree, predict the class label<br>&emsp;&emsp;Where class label counts as a single vote<br> Count all votes from each tree<br> Output class with the majority vote<br><b>End</b> |
+|<b>Start</b><br>Load labelled dataset = D <br> All set of features = F <br><dd> Manually assign the number of trees, where trees = N <dd><br> For all trees 1 to N, using the bootstrap method:<br> &emsp;&emsp;take a small randomly selected sample from D, labelled <i>d</i> <br>&emsp;&emsp;and a random set number of features ( <i>f</i> ) that are less than F<br>Using <i>f</i> set of features, calculate the root node using one best-split approach<br>Create daughter nodes where best split approaches are:<br>&emsp;&emsp;Gini impurity (likely used in Orange toolkit)<br>&emsp;&emsp;Entropy <br>&emsp;&emsp;Classification error<br><dd>Once N trees are created with their daughter nodes, a random forest has been created<dd><br> Using each decision tree, predict the class label<br>&emsp;&emsp;Where class label counts as a single vote<br> Count all votes from each tree<br> Output class with the majority vote<br><b>End</b> |
  
 ### 2.6 Hyper-parameter Optimisation: Random Forest    
 The main hyperparameter to adjust is the number of trees, setting attribute numbers on splits, and limiting tree growth. To decide the optimal number of trees (n), n was input from 10 to 100 at intervals of 10 and 125 to 200 at intervals of 25. The training was set as replicable, and the attribute number was left unchecked. The results and evaluation metrics would be tabulated. Various attribute numbers will be tested against the optimal number of trees chosen in the previous step to define the optimal number of attributes.
 
 ### 2.7 Model Evaluation Metrics
+Orange toolbox contains a variety of evaluation metrics. For a classification task, confusion matrix, precision, recall, F1 score, and AUROC are useful evaluators (Figure 3). The ‘Test and Score’, ‘Confusion Matrix’, and ‘ROC Analysis’ widgets will be attached to the learning models. The F1 score will be used to combine precision and recall; as individuals, they are not great metrics.
+    
+<img src="images/figure_3.png" width="953"><br><b>Figure 3.</b> Confusion matrix and derivation of recall, specificity, precision/positive predicted value, negative predictive value, accuracy (CA) and F1 score.
 
 
 ## 3. Results
