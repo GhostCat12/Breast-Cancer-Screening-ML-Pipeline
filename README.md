@@ -40,8 +40,10 @@ It is estimated that breast cancer is the most common cancer, with the highest i
 ### 1.1 Mammography and BI-RADS Scoring
 Mammography screening uses an x-ray imaging modality held every two to three years between 47 – 74 years old, varying by country [4][5]. The imaging data is either categorised using the Breast Imaging-Reporting and Data System (BI-RADS) (Table 1) released by the American College of Radiology, where 1 is normal, and 6 refers to proven malignancy; or the UK five-point scoring system by the Royal College of Radiologists states a score of 1 is benign whereas 5 is malignant [6][7]. 
 
-| **Table 1.** BI-RADs assessment categories for mammography, based upon American College of Radiology [6]. |
+
+| **Table 1.** BI-RADs assessment categories for mammography, based upon the American College of Radiology [6]. |
 | --- |
+<img src="images/table_1.png" width="900"><p align="center">
 
 ### 1.2 Challenges in Mammography Screening
 Despite the great benefits of screening for breast cancer survival, challenges surrounding false positives (FP) have significant implications on healthcare resources and the ethics of screening. The rate of FP results has risen due to the increase in screening. Unfortunately, mammography is highly sensitive, and the varied clinical decision-making between doctors and the “better safer than sorry approach” has decreased the true positive rate. 
@@ -53,9 +55,10 @@ The aim is to utilise machine learning algorithms to improve differentiation bet
 
 The dataset originates from the Institute of Radiology of University Erlangen-Nuremberg. The data was collected between 2003 and 2006 and included 961 instances comprising 516 benign and 445 malignant masses. This multivariate dataset consists of 5 features (BI-RADS score, shape, margin, density, and Age) and 1 class (severity as benign or malignant), portrayed in *Table 2*. The dataset had all features and classes assigned a numerical value; this will aid the algorithm. The descriptive statistics (Appendix 1) revealed that density mass had the most missing data. BI-RADS range and a maximum of ‘55’ was an outlier strongly suggestive of a typo; this will be removed during the data cleansing. Overall, there is only a slight deviation in the mean and median; therefore, the data has a relatively normal distribution. 
 
-
 | **Table 2.** Information box on features and classes, assigned values and amount of missing data of the Mammography masses dataset. |
 | --- |
+<img src="images/table_2.png" width="980"><p align="center">
+
 
 
 ### 1.4 Feature Space
@@ -86,10 +89,10 @@ On Orange, instances with missing values were removed using the impute function.
 For feature selection, all features were ranked (Table 3), focusing on information gain and gain ratio. Density shows insignificant contribution continually throughout all rankings; therefore, it will be removed. Using the pre-process function in Orange, features were fixed to ‘four’, and scoring was set to ‘information gain’; this automatically removed density. Initially, there was doubt over the importance of including both BI-RADS and margin/shape/density due to all three already being part of the BI-RADS score under the mass section. However, the inclusion of margin/shape/density increased the weight of these features, along with BI-RADS involving calcifications, symmetry, and other associated features. There was no feature construction as it was not necessary for our dataset. Further pre-processing involved feature standardisation, set at ‘standardise to µ = 0 and σ2 = 1’, this is especially important as the age feature ranges from 18 to 95, whereas the rest go up to 5. 
 | **Table 3.** Feature ranking using various metrics on Orange toolbox shows BI-RADS (highest) to density (lowest). |
 | --- |
+![](images/table_3.png)
 
 ### 2.3 Model Selection: K-nearest neighbour     
 K nearest neighbour (KNN) is a lazy learner algorithm that does not rely on learning the relationships within the data to create a discriminatory function; instead, it focuses on the current state of the data set and assigns a class based on the unclassified data point’s nearest neighbouring data points and casts a majority vote on which class to assign [10]. The KKN algorithm pseudocode is as follows in *Box 1*.     
-
 
 
  | Box 1.  KNN algorthim pseudocode. |
