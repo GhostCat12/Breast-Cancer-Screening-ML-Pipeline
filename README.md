@@ -32,7 +32,7 @@
 
 
 ## 1. Introduction 
-It is estimated that breast cancer is the most common cancer, with the highest incidence, mortality, and prevalence in women, worldwide [1]. Since 1985 research and treatments have rapidly evolved, alongside the introduction of mass screening. Early detection has played a vital role in catching breast cancer in-situ stage 0 or localised stage 1. Currently, 99% of breast cancer patients survive for more than five years if discovered during stages 0 – 1. The drastically lowered mortality rates from the late 1980s are portrayed in *Figure 1*; this was partly due to the adaption of mammography screening [2][3].
+It is estimated that breast cancer is the most common cancer, with the highest incidence, mortality, and prevalence in women, worldwide [1]. Since 1985 research and treatments have rapidly evolved, alongside the introduction of mass screening. Early detection has played a vital role in catching breast cancer in-situ stage 0 or localised stage 1. Currently, 99% of breast cancer patients survive for more than five years if discovered during stages 0 – 1. The drastically lowered mortality rates from the late 1980s are portrayed in *Figure 1*; this was partly due to the adoption of mammography screening [2][3].
 
 ![](images/figure_1.png)
 **Figure 1.** Female mortality rate of breast cancer in countries with available data from 1960 to 2018 [2]. 
@@ -46,12 +46,12 @@ Mammography screening uses an x-ray imaging modality held every two to three yea
 <img src="images/table_1.png" width="900"><p align="center">
 
 ### 1.2 Challenges in Mammography Screening
-Despite the great benefits of screening for breast cancer survival, challenges surrounding false positives (FP) have significant implications on healthcare resources and the ethics of screening. The rate of FP results has risen due to the increase in screening. Unfortunately, mammography is highly sensitive, and the varied clinical decision-making between doctors and the “better safer than sorry approach” has decreased the true positive rate. 
+Despite the great benefits of screening for breast cancer survival, challenges surrounding false positives (FP) have significant implications on healthcare resources and the ethics of screening. The rate of FP results has risen due to the increase in screening. Unfortunately, mammography is highly sensitive, and the varied clinical decision-making between doctors and the “better, safer than sorry approach” has decreased the true positive rate. 
 
 The consequences of FPs are overdiagnosis and overtreatment. Further diagnostic tests lead to extra time spent, use of hospital personnel and unnecessary expenses to the healthcare system [8]. More importantly, with ethical regards, informing the patient of a FP may lead to distress, especially during the waiting time for further diagnosis, or being informed of in-actionable findings, i.e., breast cancer stage 0, may also increase anxiety. Further testing may be invasive; for example, unnecessary breast biopsies are causing more harm than good.
 
 ### 1.3 Use of Machine Learning and Mammography Masses Dataset
-The aim is to utilise machine learning algorithms to improve differentiation between benign and malignant breast cancer, thus reducing false positives. The “Mammographic masses” dataset was obtained from the UCI Machine Learning Repository [9]. The dataset and Orange: Data Mining Toolbox in Python will be used to construct prediction algorithms based on supervised learning approaches of random forest and KNN.   
+The aim is to utilise machine learning algorithms to improve differentiation between benign and malignant breast cancer, thus reducing false positives. The “Mammographic masses” dataset was obtained from the UCI Machine Learning Repository [9]. The dataset and Orange3: Data Mining Toolbox in Python will be used to construct prediction algorithms based on supervised learning approaches of random forest and KNN.   
 
 The dataset originates from the Institute of Radiology of University Erlangen-Nuremberg. The data was collected between 2003 and 2006 and included 961 instances comprising 516 benign and 445 malignant masses. This multivariate dataset consists of 5 features (BI-RADS score, shape, margin, density, and Age) and 1 class (severity as benign or malignant), portrayed in *Table 2*. The dataset had all features and classes assigned a numerical value; this will aid the algorithm. The descriptive statistics (Appendix 1) revealed that density mass had the most missing data. BI-RADS range and a maximum of ‘55’ was an outlier strongly suggestive of a typo; this will be removed during the data cleansing. Overall, there is only a slight deviation in the mean and median; therefore, the data has a relatively normal distribution. 
 
@@ -62,30 +62,30 @@ The dataset originates from the Institute of Radiology of University Erlangen-Nu
 
 
 ### 1.4 Feature Space
-Orange shows BI-RADS against margin shape and density provided the most informative projections. An example of BI-RADS vs Margin is portrayed in *Figure 2a*, showing a positive correlation, and a boundary line can be defined between the features. Secondly, BI-RADS vs Age was important to look at (Figure 2b), as BI-RADS scoring includes margin, shape and density masses and summarises the overall relationship of age with the remaining features. Also to note, the outliers showing BI-RADS scores of 6 are biopsy-confirmed malignant cases; therefore, the two benign (blue circles) are incorrect; the remaining BI-RADS score = 6 may contribute to data leakage. Highlighting Density vs other features showed density did not provide much information (Figure 2c), as it mostly lay in a single plane; density may be removed during feature selection.
+Orange3 showed BI-RADS against margin, shape and density provided the most informative projections. An example of BI-RADS vs Margin is portrayed in *Figure 2a*, showing a positive correlation, and a boundary line can be defined between the features. Secondly, BI-RADS vs Age was important to look at (Figure 2b), as BI-RADS scoring includes margin, shape and density masses and summarises the overall relationship of age with the remaining features. Also to note, the outliers showing BI-RADS scores of 6 are biopsy-confirmed malignant cases; therefore, the two benign (blue circles) are incorrect; the remaining BI-RADS score = 6 may contribute to data leakage. Highlighting Density vs other features showed density did not provide much information (Figure 2c), as it mostly lay in a single plane; density may be removed during feature selection.
 
 <p align="center">
-<img src="images/figure_2a.png" width="680"><br><b>Figure 2a.</b> BI-RADS vs Margin feature space created in Orange toolbox.</p>   
+<img src="images/figure_2a.png" width="680"><br><b>Figure 2a.</b> BI-RADS vs Margin feature space created in Orange3 toolbox.</p>   
 
     
 <p align="center">
-<img src="images/figure_2b.png" width="680"><br><b>Figure 2b.</b> Age vs BI-RADS feature space created in Orange toolbox.</p>
+<img src="images/figure_2b.png" width="680"><br><b>Figure 2b.</b> Age vs BI-RADS feature space created in Orange3 toolbox.</p>
 
 <p align="center">
-<img src="images/figure_2c.png" width="680"><br><b>Figure 2c.</b> Age vs Density feature space created in Orange toolbox.</p>
+<img src="images/figure_2c.png" width="680"><br><b>Figure 2c.</b> Age vs Density feature space created in Orange3 toolbox.</p>
 
 
 ## 2. Methodology    
-Orange toolbox `.ows` file showing the methodology pipeline has been separately attached.    
+Orange3 toolbox `Orange3_ml_pipeline.ows` file showing the methodology pipeline has been separately attached.    
 
 ### 2.1 Data Cleansing     
 Data pre-processing started with the conversion of the dataset into .xls format. Data was split into feature columns, and a row at the top with feature names was added to differentiate the columns. Data cleansing involved replacing 16 instances with BI-RAD values of 0 and 6 with a “?”; 0 meant insufficient data, and 6 conferred to a biopsy-confirmed tumour. Secondly, instance 341 in feature column BI-RAD contained a typo of “55”; this was replaced with 5.     
 
-On Orange, instances with missing values were removed using the impute function. The categorical nature of the majority of our features does not allow for mean or regressive substitution, nor any other approaches to reserve the dataset, e.g., replacing values with K-nearest neighbour, as this adds bias and inaccuracies to the data and creates a layer of uncertainty when evaluating the model performance. Consequently, listwise deletion does not have a significant impact as the dataset is moderately large; 816 instances remain out of 961.    
+On Orange3, instances with missing values were removed using the impute function. The categorical nature of the majority of our features does not allow for mean or regressive substitution, nor any other approaches to reserve the dataset, e.g., replacing values with K-nearest neighbour, as this adds bias and inaccuracies to the data and creates a layer of uncertainty when evaluating the model performance. Consequently, listwise deletion does not have a significant impact as the dataset is moderately large; 816 instances remain out of 961.    
 
 ### 2.2 Feature Pre-processing
-For feature selection, all features were ranked (Table 3), focusing on information gain and gain ratio. Density shows insignificant contribution continually throughout all rankings; therefore, it will be removed. Using the pre-process function in Orange, features were fixed to ‘four’, and scoring was set to ‘information gain’; this automatically removed density. Initially, there was doubt over the importance of including both BI-RADS and margin/shape/density due to all three already being part of the BI-RADS score under the mass section. However, the inclusion of margin/shape/density increased the weight of these features, along with BI-RADS involving calcifications, symmetry, and other associated features. There was no feature construction as it was not necessary for our dataset. Further pre-processing involved feature standardisation, set at ‘standardise to µ = 0 and σ2 = 1’, this is especially important as the age feature ranges from 18 to 95, whereas the rest go up to 5. 
-| **Table 3.** Feature ranking using various metrics on Orange toolbox shows BI-RADS (highest) to density (lowest). |
+For feature selection, all features were ranked (Table 3), focusing on information gain and gain ratio. Density shows insignificant contribution continually throughout all rankings; therefore, it will be removed. Using the pre-process function in Orange3, features were fixed to ‘four’, and scoring was set to ‘information gain’; this automatically removed density. Initially, there was doubt over the importance of including both BI-RADS and margin/shape/density due to all three already being part of the BI-RADS score under the mass section. However, the inclusion of margin/shape/density increased the weight of these features, along with BI-RADS involving calcifications, symmetry, and other associated features. There was no feature construction as it was not necessary for our dataset. Further pre-processing involved feature standardisation, set at ‘standardise to µ = 0 and σ2 = 1’; this is especially important as the age feature ranges from 18 to 95, whereas the rest go up to 5. 
+| **Table 3.** Feature ranking using various metrics on Orange3 toolbox shows BI-RADS (highest) to density (lowest). |
 | --- |
 ![](images/table_3.png)
 
@@ -101,21 +101,21 @@ K nearest neighbour (KNN) is a lazy learner algorithm that does not rely on lear
 The three hyperparameters to consider in KNN are the distance metric, *K* number and weight. 
 The most popular metric, Euclidean distance, was chosen because it calculates the direct distance to each point and, therefore, can be used in any direction in space without dimension limitations.     
 
-When choosing a *K* number, a systematic approach was used with a Euclidean distance of uniform weighting, where odd *K* values were input from 3 to 25 and results with evaluation metrics would be tabulated. A similar systematic approach was used for choosing weight, where uniform weighting was replaced with distance-based weighting
+When choosing a *K* number, a systematic approach was used with a Euclidean distance of uniform weighting, where odd *K* values were input from 3 to 25, and results with evaluation metrics would be tabulated. A similar systematic approach was used for choosing weight, where uniform weighting was replaced with distance-based weighting
 
 ### 2.5 Model Selection: Random Forest    
-The second model that was used is Random forest (RF). RF is an ensemble method based upon using multiple decision trees that each output a class based upon the input data. A voting mechanism is used to decide the final output class [11]. The random forest algorithm pseudocode is as follows in *Box 2*.
+The second model that was used is Random forest (RF). RF is an ensemble method based upon using multiple decision trees that each output a class based upon the input data. A voting mechanism decides the final output class [11]. The random forest algorithm pseudocode is as follows in *Box 2*.
 
 
 | Box 2. Random Forest algorithm pseudocode. |
 | --- |
-|<b>Start</b><br>Load labelled dataset = D <br> All set of features = F <br><dd> Manually assign the number of trees, where trees = N <dd><br> For all trees 1 to N, using the bootstrap method:<br> &emsp;&emsp;take a small randomly selected sample from D, labelled <i>d</i> <br>&emsp;&emsp;and a random set number of features ( <i>f</i> ) that are less than F<br>Using <i>f</i> set of features, calculate the root node using one best-split approach<br>Create daughter nodes where best split approaches are:<br>&emsp;&emsp;Gini impurity (likely used in Orange toolkit)<br>&emsp;&emsp;Entropy <br>&emsp;&emsp;Classification error<br><dd>Once N trees are created with their daughter nodes, a random forest has been created<dd><br> Using each decision tree, predict the class label<br>&emsp;&emsp;Where class label counts as a single vote<br> Count all votes from each tree<br> Output class with the majority vote<br><b>End</b> |
+|<b>Start</b><br>Load labelled dataset = D <br> All set of features = F <br><dd> Manually assign the number of trees, where trees = N <dd><br> For all trees 1 to N, using the bootstrap method:<br> &emsp;&emsp;take a small randomly selected sample from D, labelled <i>d</i> <br>&emsp;&emsp;and a random set number of features ( <i>f</i> ) that are less than F<br>Using <i>f</i> set of features, calculate the root node using one best-split approach<br>Create daughter nodes where best split approaches are:<br>&emsp;&emsp;Gini impurity (likely used in Orange3 toolkit)<br>&emsp;&emsp;Entropy <br>&emsp;&emsp;Classification error<br><dd>Once N trees are created with their daughter nodes, a random forest has been created<dd><br> Using each decision tree, predict the class label<br>&emsp;&emsp;Where class label counts as a single vote<br> Count all votes from each tree<br> Output class with the majority vote<br><b>End</b> |
  
 ### 2.6 Hyper-parameter Optimisation: Random Forest    
 The main hyperparameter to adjust is the number of trees, setting attribute numbers on splits, and limiting tree growth. To decide the optimal number of trees (n), n was input from 10 to 100 at intervals of 10 and 125 to 200 at intervals of 25. The training was set as replicable, and the attribute number was left unchecked. The results and evaluation metrics would be tabulated. Various attribute numbers will be tested against the optimal number of trees chosen in the previous step to define the optimal number of attributes.
 
 ### 2.7 Model Evaluation Metrics
-Orange toolbox contains a variety of evaluation metrics. For a classification task, confusion matrix, precision, recall, F1 score, and AUROC are useful evaluators (Figure 3). The ‘Test and Score’, ‘Confusion Matrix’, and ‘ROC Analysis’ widgets will be attached to the learning models. The F1 score will be used to combine precision and recall; as individuals, they are not great metrics.
+Orange3 toolbox contains a variety of evaluation metrics. For a classification task, confusion matrix, precision, recall, F1 score, and AUROC are useful evaluators (Figure 3). The ‘Test and Score’, ‘Confusion Matrix’, and ‘ROC Analysis’ widgets will be attached to the learning models. The F1 score will be used to combine precision and recall; as individuals, they are not great metrics.
     
 <img src="images/figure_3.png" width="953"><br><b>Figure 3.</b> Confusion matrix and derivation of recall, specificity, precision/positive predicted value, negative predictive value, accuracy (CA) and F1 score.
 
@@ -144,7 +144,7 @@ The AUC and precision were plotted against the number of trees (Figure 6a), wher
 The stratified 10-fold cross-validation of n = 90 and attribute at each split = 4  of RF gave the following model performance (Figure 6). It is noted that RF performed worse than KNN with an F1 (and accuracy) of 0.805 vs 0.839, respectively. 
 
 ### 3.3 RF and KNN Sensitivity Analysis 
-A sensitivity analysis was carried out to reduce the uncertainty surrounding both models (Table 4). This was done by removing one of the features within the dataset whilst keeping the others, giving insight into the importance of certain features. Removing BI-RADS for both models drastically reduced the performance, demonstrating that this is an excellent indicator for predicting breast cancer and the model mainly relied on this. For both models, the individual exclusion of shape improved the score, this was by a significant margin for RF but only a small increase in KNN. This may indicate that Shape data is superfluous to the prediction or may be detrimental; further research would be required to confirm. When removing the Margin feature, both algorithms had a minimal decrease in score. Interestingly, the removal of Age in the RF model improved the F1 score, whereas the K-NN model worsened. Density was removed in the pre-processing stage as it was assumed as insignificant in cancer detection and may reduce model performance; this has been proved by this analysis.     
+A sensitivity analysis was carried out to reduce the uncertainty surrounding both models (Table 4). This was done by removing one of the features within the dataset whilst keeping the others, giving insight into the importance of certain features. Removing BI-RADS for both models drastically reduced the performance, demonstrating that this is an excellent indicator for predicting breast cancer, and the model mainly relied on this. For both models, the individual exclusion of shape improved the score; this was by a significant margin for RF but only a small increase in KNN. This may indicate that Shape data is superfluous to the prediction or may be detrimental; further research would be required to confirm. When removing the Margin feature, both algorithms had a minimal decrease in score. Interestingly, removing Age in the RF model improved the F1 score, whereas the K-NN model worsened. Density was removed in the pre-processing stage as it was assumed as insignificant in cancer detection and may reduce model performance; this analysis has proved this.     
 
 |Table 4.  Feature sensitivity analysis of K nearest neighbour and Random Forest. Removal of individual features and recording F1 score. |
 | --- |
@@ -153,11 +153,11 @@ A sensitivity analysis was carried out to reduce the uncertainty surrounding bot
 Overall, BI-RADS and Margin are key factors in prediction, whereas Density and Shape are not. The case for Age cannot be ascertained as it improves one model whilst deteriorating the other. However, the insight given from this report can only be validated by cross-checking with other datasets, as the dataset used is relatively small and could contain biases. It should be noted that the RF method does create a new forest when altering the data (despite setting the forest as replicable), thus leading to minor deviations in prediction capabilities, nevertheless still included within this sensitivity analysis.
 
 ## 4. Discussion and Conclusion
-The mammographic masses (MM) dataset has been utilised in designing other machine learning models; one research group implemented a Naïve Bayes model on various datasets, including MM [12]. Naïve Bayes performed with 0.90 AUC compared to 0.891 (KNN) and 0.865 (RF). Unfortunately, other metrics were not provided for further comparison. Another research group employed artificial neural networks (ANN) and decision trees in which decision trees performed marginally worse, AUC  of  0.88 vs 0.87, respectively [13]. The KNN model performed better than both; however, the RF only performed better than the decision trees. Both studies stated that further testing and validation was required.       
+The mammographic masses (MM) dataset has been utilised in designing other machine learning models; one research group implemented a Naïve Bayes model on various datasets, including MM [12]. Naïve Bayes performed with 0.90 AUC compared to 0.891 (KNN) and 0.865 (RF). Unfortunately, other metrics were not provided for further comparison. Another research group employed artificial neural networks (ANN) and decision trees in which decision trees performed marginally worse, AUC  of  0.88 vs 0.87, respectively [13]. The KNN model performed better than both; however, the RF only performed better than the decision trees. Both studies stated that further testing and validation were required.       
 
-Although RF and KNN did not perform as well as expected, many other models performed well, and with better-optimised parameters could improve diagnostic accuracy. For example, using Orange to implement Naïve Bayes on the pre-processed data provided AUC=0.902 and F1=0.835; with little effort in hyperparameter optimisation, ANN provided AUC=0.899, this could be drastically improved with effort and could potentially perform better than KNN.     
+Although RF and KNN did not perform as well as expected, many other models performed competently, and with better-optimised parameters, could improve diagnostic accuracy. For example, using Orange3 to implement Naïve Bayes on the pre-processed data provided AUC=0.902 and F1=0.835; with little effort in hyperparameter optimisation, ANN provided AUC=0.899, this could be drastically improved with effort and could potentially perform better than KNN.     
 
-To further improve the methodology, a separate dataset would help reduce uncertainties. The MM dataset was from Germany; to ensure my model works equally well universally, it would need to be deployed on datasets from other countries. Furthermore, due to the retrospective nature of the MM dataset, to validate the models' clinical use, the models would need to run on real-time data; this would also expose whether the models were over-fitted.     
+To further improve the methodology, a separate dataset would help reduce uncertainties. The MM dataset was from Germany; to ensure my model works equally well universally, it must be deployed on datasets from other countries. Furthermore, due to the retrospective nature of the MM dataset, to validate the models' clinical use, the models would need to run on real-time data; this would also expose whether the models were over-fitted.     
 
 Overall, the computer-aided diagnosis approach can improve breast cancer screening by reducing the problem of FP rates. Realistically, the models will be used in conjunction with a doctor’s expertise, who can consider complete case history to decide further action after screening.    
 
@@ -203,7 +203,7 @@ The RF and KNN models performed at 0.839 and 0.805 F1 scores. This was not expec
 |Count|	959|	956|	930|	913|	885|	960|
 
 <br>
-<b>Appendix 2a:</b> Evaluation metrics data (from Orange toolkit) of K values ranging from 3 to 25 using Euclidean Distance of uniform weight.
+<b>Appendix 2a:</b> Evaluation metrics data (from Orange3 toolkit) of K values ranging from 3 to 25 using Euclidean Distance of uniform weight.
 
 |KNN Uniform Weight|	AUC|	CA|	F1|	Precision|	Recall|
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -221,7 +221,7 @@ The RF and KNN models performed at 0.839 and 0.805 F1 scores. This was not expec
 |25|	0.896|	0.835|	0.835|	0.835|	0.835|
 
 <br>
-<b>Appendix 2b:</b> Evaluation metrics data (from Orange toolkit) of K values ranging from 3 to 25 using Euclidean Distance of distance-based weight.  
+<b>Appendix 2b:</b> Evaluation metrics data (from Orange3 toolkit) of K values ranging from 3 to 25 using Euclidean Distance of distance-based weight.  
 
 |KNN Distance Weight|	AUC|	CA|	F1|	Precision|	Recall|
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -240,7 +240,7 @@ The RF and KNN models performed at 0.839 and 0.805 F1 scores. This was not expec
 
 
 <br>    
-<b>Appendix 3a:</b>  Evaluation metrics data (from Orange toolkit) of RF values ranging from 10 to 200, set as replicable, number of attributes left unchecked (default settings).     
+<b>Appendix 3a:</b>  Evaluation metrics data (from Orange3 toolkit) of RF values ranging from 10 to 200, set as replicable, number of attributes left unchecked (default settings).     
 
 |RF|	AUC|	CA|	F1|	Precision|	Recall|
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -260,7 +260,7 @@ The RF and KNN models performed at 0.839 and 0.805 F1 scores. This was not expec
 |200|	0.865|	0.799|	0.799|	0.799|	0.799|
 
 <br>    
-<b>Appendix 3b:</b> F1 evaluation metric  (from orange toolkit) of the number of attributes considered at tree split. Note that the F1 Score, CA precision, and recall presented the same score.     
+<b>Appendix 3b:</b> F1 evaluation metric  (from Orange3 toolkit) of the number of attributes considered at tree split. Note that the F1 Score, CA precision, and recall presented the same score.     
 
 |Attributes|	k = 60|	k = 90|
 | :---:| :---: | :---: |
